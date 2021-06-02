@@ -135,5 +135,11 @@ releaseRuntimeClasspath - Resolved configuration for runtime for variant: releas
 |    |    \--- com.google.guava:guava:20.0
 |    \--- com.google.http-client:google-http-client-android:1.26.0
 |         \--- com.google.http-client:google-http-client:1.26.0 (*)
-\--- com.google.apis:google-api-services-drive:v3-rev197-1.25.0
-     \--- com.google.api-client:google-api-client:1.25.0 -> 1.26.0 (*)
++--- com.google.apis:google-api-services-drive:v3-rev197-1.25.0
+|    \--- com.google.api-client:google-api-client:1.25.0 -> 1.26.0 (*)
+\--- com.google.oauth-client:google-oauth-client-jetty:1.26.0
+     +--- com.google.oauth-client:google-oauth-client-java6:1.26.0
+     |    \--- com.google.oauth-client:google-oauth-client:1.26.0 (*)
+     \--- org.mortbay.jetty:jetty:6.1.26
+          +--- org.mortbay.jetty:jetty-util:6.1.26
+          \--- org.mortbay.jetty:servlet-api:2.5-20081211
