@@ -14,6 +14,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,7 +22,9 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.EditText;
 
+import java.io.IOException;
 import java.util.Collections;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -218,6 +221,31 @@ public class MainActivity extends AppCompatActivity {
      * Queries the Drive REST API for files visible to this app and lists them in the content view.
      */
     private void query() {
+        /*
+        new Thread(() -> {
+            try {
+                // Print the names and IDs for up to 10 files.
+                FileList result = googleDriveService.files().list()
+                        .setPageSize(10)
+                        //.setFields("nextPageToken, files(id, name)")
+                        .execute();
+                List<File> files = result.getFiles();
+                if (files == null || files.isEmpty()) {
+                    System.out.println("No files found.");
+                } else {
+                    System.out.println("Files:");
+                    for (File file : files) {
+                        System.out.printf("%s (%s)\n", file.getName(), file.getId());
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+        */
+
         if (mDriveServiceHelper != null) {
             Log.d(TAG, "Querying for files.");
 
