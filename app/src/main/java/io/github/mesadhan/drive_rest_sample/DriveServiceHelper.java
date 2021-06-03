@@ -110,7 +110,11 @@ public class DriveServiceHelper {
         return Tasks.call(mExecutor, new Callable<FileList>() {
             @Override
             public FileList call() throws Exception {
-                return mDriveService.files().list().setSpaces("drive").execute();
+                return mDriveService.files()
+                        .list()
+                        //.setPageSize(10)
+                        .setSpaces("drive")
+                        .execute();
             }
         });
     }
